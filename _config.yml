@@ -1,0 +1,6 @@
+# GitHub Pages runs Jekyll on this repository. The pages here are plain HTML
+# without front matter, so Jekyll copies them to the site unchanged.
+# This file only keeps project notes out of the published website
+# (they remain visible in the public repository itself).
+exclude:
+  - CLAUDE.md
