@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- List of pages for search engines. Submit https://sofiaballadares.github.io/sitemap.xml
+     in Google Search Console. Update <lastmod> when the page changes substantially. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sofiaballadares.github.io/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://sofiaballadares.github.io/assets/pdf/CV_Sofia_Balladares.pdf</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+</urlset>

@@ -57,8 +57,9 @@ strong { font-weight: 600; }
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 0 28px; padding: 0 28px; min-height: 64px;
 }
+.brand-h { margin: 0; font-size: inherit; font-weight: inherit; line-height: 1; }  /* name is the page's h1 (search engines) but looks like a plain logo */
 .brand {
-  font-family: var(--display); font-weight: 600; font-size: 1.8rem; line-height: 1;
+  display: block; font-family: var(--display); font-weight: 600; font-size: 1.8rem; line-height: 1;
   letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 14px 0;
 }
 .brand:hover { color: #fff; text-decoration: none; }

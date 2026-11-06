@@ -78,6 +78,12 @@ paths on purpose, so it looks unstyled when opened locally.
 - **Favicon**: `assets/img/favicon.svg` ("SB" monogram).
 - **Jekyll config**: `_config.yml`. It only excludes this file from the
   published site. Pages have no front matter, so Jekyll copies them unchanged.
+- **Search engines**: `sitemap.xml` (home page and CV PDF; update `<lastmod>`
+  after substantial changes), `robots.txt` (allows everything, points to the
+  sitemap). In `index.html`, the JSON-LD block (`@graph` with a `WebSite` and a
+  `Person`, with unaccented `alternateName` "Sofia Balladares") and the navbar
+  name are wrapped in the page's only `<h1>` (`.brand-h`, styled to look like
+  a plain logo).
 - Fonts (Google Fonts): *Cormorant Garamond* for the name in the navbar,
   *Source Serif 4* for section titles, *Source Sans 3* for body text. There are
   no other external dependencies: no Bootstrap, and no JavaScript beyond the
@@ -97,6 +103,7 @@ If the navbar changes, also update the nav links in `404.html`.
 | Add a talk | Copy an `<li class="event-card">` to the top of *Presentations* (newest first). Set the month and year in the badge and the kind label (`Conference`, `Workshop`, `Seminar`, `Poster`). |
 | Add a press article | Add an `<li>` at the top of the `#media` list. |
 | Add Google Scholar / ORCID / RePEc | Uncomment the placeholders in the intro `info` list. Also add them to the footer links and to the JSON-LD `sameAs` list in the `<head>`. |
+| Google Search Console verification | Sofía adds the URL-prefix property `https://sofiaballadares.github.io/` and picks "HTML file": put the downloaded `google….html` file at the repo root unchanged (or paste the `<meta name="google-site-verification">` tag into `<head>`), push, then click Verify. Keep the file afterwards; deleting it unverifies the site. |
 | Change email | Search and replace `sofia.balladares@outlook.es` in `index.html` (JSON-LD, intro info list, footer). |
 | Change site URL / custom domain | Search and replace `https://sofiaballadares.github.io` (canonical, `og:` tags, JSON-LD). For a custom domain also add a `CNAME` file and set it under repo Settings → Pages. |
 | Publish | `git add -A && git commit -m "..." && git push`. GitHub Pages rebuilds in about 1–2 minutes. Browsers may cache the CV for up to about 10 minutes. |
@@ -149,6 +156,7 @@ If something is missing, leave a commented placeholder and ask Sofía.
 | 2026-11-06 | Email shown: `sofia.balladares@outlook.es` | It is the address on the current CV and survives after the PhD. The old site used the UB address. |
 | 2026-11-06 | American spelling throughout ("organized") | Matches the CV. |
 | 2026-11-06 | Address `sofiaballadares.github.io`: GitHub account renamed from `Sofia-BH` to `sofiaballadares` | Name-based URL matches her Bluesky handle. Decided before the URL goes on the CV, because GitHub does not redirect a renamed user's `*.github.io` site. Her other repos' remotes (`github.com/Sofia-BH/...`) keep working through GitHub's redirects but should eventually be updated. |
+| 2026-11-06 | Search setup: sitemap, robots.txt, `WebSite` + `Person` JSON-LD, name as `<h1>`. No custom domain for now | Sofía wants the site to be the top Google result for her name. On-page signals are now in place. What remains is mostly off-site: Search Console and links from her other profiles. A custom domain is not needed to rank for a name. |
 
 ## Dropped Options
 
@@ -172,8 +180,25 @@ If something is missing, leave a commented placeholder and ask Sofía.
   from `main` / root with HTTPS enforced. All pages, the CV PDF and the photo
   return 200 on the live site; `CLAUDE.md` and `_config.yml` return 404, as
   intended. The live render matches the local one.
+- Search setup pushed (2026-11-06): `sitemap.xml`, `robots.txt`, JSON-LD
+  `@graph`, `<h1>` name. A web search for her name on 2026-11-06 found no
+  other researcher named Sofía Balladares, and the new site was not yet
+  indexed.
 
 ## Open Issues / Next Steps
+
+0. **Google ranking for "Sofía Balladares"** (Sofía's to-do, in order):
+   1. Google Search Console: add the URL-prefix property and verify it (recipe
+      above). Then submit `sitemap.xml`, and use URL Inspection → *Request
+      indexing* on the home page.
+   2. Add a link to the site from every profile, most important first: UB PhD
+      page and IEB researcher page (ask the webmasters), LinkedIn (Contact info
+      → Website), Bluesky bio, GitHub profile (Settings → Public profile →
+      Website), the CV PDF, and later Google Scholar, ORCID and RePEc.
+   3. Old Google Site: replace its content with a link to the new site. Once the
+      new site ranks, unpublish the old one.
+   4. Optional: Bing Webmaster Tools (it can import from Search Console; also
+      covers DuckDuckGo and Yahoo).
 
 1. **Other local repos** still have remotes at `github.com/Sofia-BH/...`. These
    work through GitHub's redirect, but should be updated with

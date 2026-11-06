@@ -21,21 +21,36 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sofía Balladares",
-    "jobTitle": "PhD Candidate in Economics",
-    "affiliation": [
-      { "@type": "CollegeOrUniversity", "name": "University of Barcelona" },
-      { "@type": "ResearchOrganization", "name": "Institut d'Economia de Barcelona (IEB)" }
-    ],
-    "knowsAbout": ["Public economics", "Taxation", "Inequality"],
-    "url": "https://sofiaballadares.github.io/",
-    "image": "https://sofiaballadares.github.io/assets/img/personal_photo.jpg",
-    "email": "mailto:sofia.balladares@outlook.es",
-    "sameAs": [
-      "https://www.linkedin.com/in/sofia-balladares/",
-      "https://bsky.app/profile/sofiaballadares.bsky.social",
-      "https://ieb.ub.edu/researcher/sofia-balladares/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sofiaballadares.github.io/#website",
+        "name": "Sofía Balladares",
+        "alternateName": "Sofia Balladares",
+        "url": "https://sofiaballadares.github.io/",
+        "about": { "@id": "https://sofiaballadares.github.io/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://sofiaballadares.github.io/#person",
+        "name": "Sofía Balladares",
+        "alternateName": "Sofia Balladares",
+        "jobTitle": "PhD Candidate in Economics",
+        "affiliation": [
+          { "@type": "CollegeOrUniversity", "name": "University of Barcelona" },
+          { "@type": "ResearchOrganization", "name": "Institut d'Economia de Barcelona (IEB)" }
+        ],
+        "knowsAbout": ["Public economics", "Taxation", "Inequality"],
+        "url": "https://sofiaballadares.github.io/",
+        "image": "https://sofiaballadares.github.io/assets/img/personal_photo.jpg",
+        "email": "mailto:sofia.balladares@outlook.es",
+        "sameAs": [
+          "https://www.linkedin.com/in/sofia-balladares/",
+          "https://bsky.app/profile/sofiaballadares.bsky.social",
+          "https://ieb.ub.edu/researcher/sofia-balladares/",
+          "https://www.ub.edu/school-economics/phd_students/balladares-sofia/"
+        ]
+      }
     ]
   }
   </script>
@@ -46,7 +61,7 @@
   <!-- ===== Navbar ===== -->
   <header class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#home">Sofía Balladares</a>
+      <h1 class="brand-h"><a class="brand" href="#home">Sofía Balladares</a></h1>
       <nav aria-label="Main">
         <ul class="nav">
           <li><a href="#home" class="active">Home</a></li>
