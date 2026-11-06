@@ -149,17 +149,22 @@ If something is missing, leave a commented placeholder and ask Sofía.
 
 ## Current Status
 
-**Phase**: Built. Pending publication (as of 2026-11-06).
+**Phase**: Live at https://sofiaballadares.github.io (published 2026-11-06).
 
 - Five pages, stylesheet, favicon and 404 page are written and visually checked
   at 1280px and 375px.
-- URL chosen: `sofiaballadares.github.io`. Waiting for the GitHub username rename
-  (`Sofia-BH` → `sofiaballadares`, which Sofía does herself on github.com), then
-  create the public repo `sofiaballadares.github.io` and push.
+- GitHub account renamed `Sofia-BH` → `sofiaballadares`. Public repo
+  `sofiaballadares/sofiaballadares.github.io` created and pushed. Pages builds
+  from `main` / root with HTTPS enforced. All pages, the CV PDF and the photo
+  return 200 on the live site; `CLAUDE.md` and `_config.yml` return 404, as
+  intended. The live render matches the local one.
 
 ## Open Issues / Next Steps
 
-1. **Publish** to GitHub Pages and confirm the live URL works.
+1. **Other local repos** still have remotes at `github.com/Sofia-BH/...`. These
+   work through GitHub's redirect, but should be updated with
+   `git remote set-url origin https://github.com/sofiaballadares/<repo>.git`
+   (only Sofía's own repos; `ES_LeyBeckham` belongs to dirkforemny).
 2. **Fix the CV PDF** (LaTeX source is not in this repo):
    - List *Fiscal drag with microsimulation* as published: *Fiscal Studies*
      47(2): 113–137 (2026), DOI 10.1111/1475-5890.70021.
