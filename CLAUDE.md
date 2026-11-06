@@ -37,8 +37,8 @@ market at the end of the PhD. The goals are:
 3. **Easy to maintain**: plain HTML + one CSS file, no build step, no
    framework. Any page can be edited in a text editor or on github.com.
 
-- **Live site**: https://sofia-bh.github.io (GitHub Pages, user site)
-- **Repository**: github.com/Sofia-BH/sofia-bh.github.io (local folder:
+- **Live site**: https://sofiaballadares.github.io (GitHub Pages, user site)
+- **Repository**: github.com/sofiaballadares/sofiaballadares.github.io (local folder:
   `Documents/GitHub/website`)
 - **Old site** (to be retired): https://sites.google.com/view/sofiaballadares/home
 
@@ -86,7 +86,7 @@ in `404.html`). Only the `aria-current="page"` attribute differs per page.
 | Recent updates (home) | Keep 4–6 items, newest first. Remove the oldest when adding. |
 | Add Google Scholar / ORCID / RePEc | Uncomment the placeholders in the `profile-links` list in `index.html` and add the URL to the JSON-LD `sameAs` list in the `<head>`. |
 | Change email | Search and replace `sofia.balladares@outlook.es` across all `.html` files (header JSON-LD, home contact, every footer). |
-| Change site URL / custom domain | Search and replace `https://sofia-bh.github.io` (canonical, `og:` tags, JSON-LD). For a custom domain also add a `CNAME` file and set it under repo Settings → Pages. |
+| Change site URL / custom domain | Search and replace `https://sofiaballadares.github.io` (canonical, `og:` tags, JSON-LD). For a custom domain also add a `CNAME` file and set it under repo Settings → Pages. |
 | Publish | `git add -A && git commit -m "..." && git push`. GitHub Pages rebuilds in about 1–2 minutes. Browsers may cache the CV for up to about 10 minutes. |
 
 ### Previewing locally
@@ -137,6 +137,7 @@ If something is missing, leave a commented placeholder and ask Sofía.
 | 2026-11-06 | Email shown: `sofia.balladares@outlook.es` | It is the address on the current CV and survives after the PhD. The old site used the UB address. |
 | 2026-11-06 | References listed with emails on `cv.html` | Already public in the CV PDF; standard on job-market sites. Easy to remove. |
 | 2026-11-06 | American spelling throughout ("organized") | Matches the CV. |
+| 2026-11-06 | Address `sofiaballadares.github.io`: GitHub account renamed from `Sofia-BH` to `sofiaballadares` | Name-based URL matches her Bluesky handle. Decided before the URL goes on the CV, because GitHub does not redirect a renamed user's `*.github.io` site. Her other repos' remotes (`github.com/Sofia-BH/...`) keep working through GitHub's redirects but should eventually be updated. |
 
 ## Dropped Options
 
@@ -152,7 +153,9 @@ If something is missing, leave a commented placeholder and ask Sofía.
 
 - Five pages, stylesheet, favicon and 404 page are written and visually checked
   at 1280px and 375px.
-- Repository not yet pushed to GitHub. URL choice pending (see Open Issues).
+- URL chosen: `sofiaballadares.github.io`. Waiting for the GitHub username rename
+  (`Sofia-BH` → `sofiaballadares`, which Sofía does herself on github.com), then
+  create the public repo `sofiaballadares.github.io` and push.
 
 ## Open Issues / Next Steps
 
