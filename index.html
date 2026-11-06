@@ -16,7 +16,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
   {
@@ -43,17 +43,17 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== Header (identical on every page; only aria-current moves) ===== -->
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">Sofía Balladares</a>
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#home">Sofía Balladares</a>
       <nav aria-label="Main">
         <ul class="nav">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="conferences.html">Conferences</a></li>
-          <li><a href="news.html"><span class="nav-long">In the </span>News</a></li>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#conferences">Conferences</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="assets/pdf/CV_Sofia_Balladares.pdf" target="_blank" rel="noopener">CV</a></li>
         </ul>
       </nav>
     </div>
@@ -62,150 +62,218 @@
   <main id="main">
     <div class="container">
 
-      <!-- ===== Introduction ===== -->
-      <section class="hero">
-        <div>
-          <p class="eyebrow">PhD Candidate in Economics</p>
-          <h1>Sofía Balladares</h1>
-          <p class="affil">
-            <a href="https://www.ub.edu/school-economics/phd_students/balladares-sofia/">University of Barcelona</a>
-            &middot;
-            <a href="https://ieb.ub.edu/researcher/sofia-balladares/">Institut d'Economia de Barcelona (IEB)</a>
-          </p>
-
-          <div class="bio">
-            <p>I am a PhD candidate in Economics at the University of Barcelona and an affiliated researcher at the Institut d'Economia de Barcelona (IEB), supervised by <a href="http://www.foremny.eu/">Dirk Foremny</a> and <a href="https://miguelalmunia.weebly.com/">Miguel Almunia</a>. My research is in public economics: I study inequality, tax design and tax compliance. I am currently working on the incidence of personal and corporate taxes and on how taxation affects firms' automation decisions.</p>
-            <p>Before my PhD, I worked as a research assistant at the <a href="https://www.taxobservatory.eu/">EU Tax Observatory</a> at the Paris School of Economics and in the Public Sector and Fiscal Policy Unit of the <a href="https://www.bde.es/">Banco de España</a>. During my PhD I have been on research visits at the <a href="https://www.parisschoolofeconomics.eu/en/">Paris School of Economics</a> and the <a href="https://ifs.org.uk/">Institute for Fiscal Studies</a>.</p>
-            <!-- Optional personal line, as on many job-market sites. Uncomment and edit:
-            <p><strong>A little about me:</strong> ...</p>
-            -->
-          </div>
-
-          <div class="actions">
-            <a class="btn btn-primary" href="research.html">Research</a>
-            <a class="btn btn-secondary" href="assets/pdf/CV_Sofia_Balladares.pdf">CV (PDF)</a>
-          </div>
-
-          <ul class="profile-links" aria-label="Profiles">
-            <li><a href="mailto:sofia.balladares@outlook.es">Email</a></li>
-            <li><a href="https://www.linkedin.com/in/sofia-balladares/">LinkedIn</a></li>
-            <li><a href="https://bsky.app/profile/sofiaballadares.bsky.social">Bluesky</a></li>
-            <li><a href="https://ieb.ub.edu/researcher/sofia-balladares/">IEB profile</a></li>
-            <!-- Add when created:
-            <li><a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a></li>
-            <li><a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></li>
-            <li><a href="https://ideas.repec.org/e/XXXX.html">RePEc</a></li>
-            -->
-          </ul>
+      <!-- ===================== HOME ===================== -->
+      <section id="home" class="intro">
+        <div class="intro-photo">
+          <img src="assets/img/personal_photo.jpg" alt="Portrait of Sofía Balladares" width="300" height="300">
         </div>
-
-        <div class="hero-photo">
-          <img src="assets/img/personal_photo.jpg" alt="Portrait of Sofía Balladares" width="250" height="250">
+        <div class="intro-text">
+          <p>I am a PhD candidate in Economics at the <a href="https://www.ub.edu/school-economics/phd_students/balladares-sofia/">University of Barcelona</a> and an affiliated researcher at the <a href="https://ieb.ub.edu/researcher/sofia-balladares/">Institut d'Economia de Barcelona (IEB)</a>, supervised by <a href="http://www.foremny.eu/">Dirk Foremny</a> and <a href="https://miguelalmunia.weebly.com/">Miguel Almunia</a>. I am a public economist working on inequality, tax design and tax compliance. I am currently working on the incidence of personal and corporate taxes and on how taxation affects firms' automation decisions.</p>
+          <p>Before my PhD, I worked as a research assistant at the <a href="https://www.taxobservatory.eu/">EU Tax Observatory</a> and at the Public Sector and Fiscal Policy Unit of the <a href="https://www.bde.es/">Banco de España</a>. During my PhD I have been on research visits at the <a href="https://www.parisschoolofeconomics.eu/en/">Paris School of Economics</a> and the <a href="https://ifs.org.uk/">Institute for Fiscal Studies</a>.</p>
+          <!-- Optional personal line. Uncomment and edit:
+          <p>A little about me: ...</p>
+          -->
+          <ul class="info">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+              <a href="mailto:sofia.balladares@outlook.es">sofia.balladares@outlook.es</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M2.5 9.5 12 3.5l9.5 6z"/><path d="M5.5 10v8M10 10v8M14 10v8M18.5 10v8"/></svg>
+              <span>School of Economics, University of Barcelona &amp; IEB</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+              <span>
+                <a href="assets/pdf/CV_Sofia_Balladares.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+                <span class="sep">&middot;</span> <a href="https://www.linkedin.com/in/sofia-balladares/">LinkedIn</a>
+                <span class="sep">&middot;</span> <a href="https://bsky.app/profile/sofiaballadares.bsky.social">Bluesky</a>
+                <!-- Add when created:
+                <span class="sep">&middot;</span> <a href="https://scholar.google.com/citations?user=XXXX">Google Scholar</a>
+                <span class="sep">&middot;</span> <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+                <span class="sep">&middot;</span> <a href="https://ideas.repec.org/e/XXXX.html">RePEc</a>
+                -->
+              </span>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <!-- ===== Recent updates (newest first; keep 4–6 items) ===== -->
-      <h2 class="section-title">Recent updates</h2>
-      <div class="updates">
-        <ul class="dated-list">
+      <!-- ===================== RESEARCH ===================== -->
+      <section id="research">
+        <h2 class="section-title">Research</h2>
+
+        <!--
+          HOW TO ADD A PAPER: copy one <details class="paper"> block.
+          The <summary> is what visitors see before clicking (title + one meta line);
+          everything in .paper-body appears when the row is opened.
+          Add the attribute "open" to <details> to show a paper expanded by default.
+        -->
+        <h3 class="sub-title">Publications</h3>
+        <div class="papers">
+          <details class="paper">
+            <summary>
+              <span>
+                <span class="paper-title">Fiscal Drag with Microsimulation: Evidence from Spanish Tax Records</span>
+                <span class="paper-meta">with Esteban García-Miralles &middot; <em>Fiscal Studies</em>, 47(2): 113–137, 2026</span>
+              </span>
+              <span class="chev" aria-hidden="true"></span>
+            </summary>
+            <div class="paper-body">
+              <ul class="pills" aria-label="Topics">
+                <li>Personal income tax</li>
+                <li>Fiscal drag</li>
+                <li>Inflation</li>
+                <li>Microsimulation</li>
+                <li>Administrative data</li>
+              </ul>
+              <div class="paper-links">
+                <a class="ext" href="https://doi.org/10.1111/1475-5890.70021">Journal article</a>
+                <a class="ext" href="https://ieb.ub.edu/publication/2025-08-fiscal-drag-with-microsimulation-evidence-from-spanish-tax-records/">Working paper version</a>
+                <a href="#media">Media coverage</a>
+              </div>
+              <p class="paper-abstract"><strong>Abstract:</strong> Fiscal drag arises when nominal tax parameters remain unchanged despite nominal income growth, thereby increasing effective tax rates and revenue. We use Spanish administrative tax records and a detailed microsimulation model to examine fiscal drag in personal income taxation through two complementary approaches. First, we estimate tax-to-base elasticities to assess the progressivity of the tax system and potential fiscal drag under homogeneous income growth. We uncover significant heterogeneity in elasticities across income sources, across the individual income distribution and in the underlying mechanisms. Second, we conduct counterfactual simulations to quantify the actual impact of fiscal drag from 2019 to 2023, finding it accounts for about a third of revenue growth. Our findings offer insights for public finance modelling, revenue forecasting, and tax policy design.</p>
+            </div>
+          </details>
+        </div>
+
+        <h3 class="sub-title">Work in Progress</h3>
+        <ul class="ref-list">
+          <li><span class="t">Preferential Tax Regimes and Personal Income Tax Incidence</span> <span class="m">(with <a href="http://www.foremny.eu/">Dirk Foremny</a>)</span></li>
+          <li><span class="t">Taxes and Firms' Automation Decisions</span></li>
+        </ul>
+
+        <h3 class="sub-title">Book Chapters</h3>
+        <ul class="ref-list">
           <li>
-            <span class="date">Apr 2026</span>
-            <span class="event">“Fiscal drag with microsimulation: evidence from Spanish tax records” (with Esteban García-Miralles) is published in <em>Fiscal Studies</em>.</span>
-          </li>
-          <li>
-            <span class="date">Spring 2026</span>
-            <span class="event">Research visit at the Institute for Fiscal Studies, London.</span>
-          </li>
-          <li>
-            <span class="date">Dec 2025</span>
-            <span class="event">Presentation at the 50th Symposium of the Spanish Economic Association.</span>
-          </li>
-          <li>
-            <span class="date">Fall 2025</span>
-            <span class="event">Research visit at the Paris School of Economics.</span>
-          </li>
-          <li>
-            <span class="date">Jun 2025</span>
-            <span class="event">Co-organized the 2nd Workshop in the Economics of Taxation at the University of Barcelona, with the EU Tax Observatory.</span>
+            <a class="t" href="https://laviedesidees.fr/L-Europe-du-marche-a-la-puissance-publique">Sanctions Against Oligarchs and the Role of a European Asset Register</a>
+            <span class="m">(with <a href="https://lucaschancel.com/en/">Lucas Chancel</a>, <a href="https://theresa-neef.net/">Theresa Neef</a>, <a href="https://panosni.github.io/">Panayiotis Nicolaides</a>, <a href="https://piketty.pse.ens.fr/en/">Thomas Piketty</a> and <a href="https://gabriel-zucman.eu/">Gabriel Zucman</a>).
+            In É. Monnet and A. Vauchez (eds.), <em>L'Europe : du marché à la puissance publique ?</em>, PUF / La Vie des idées, Collège de France, 2024.</span>
+            <span class="note" lang="fr">Published in French as « Des sanctions contre les oligarques à un cadastre financier européen ».</span>
           </li>
         </ul>
-      </div>
 
-      <!-- ===== Featured paper ===== -->
-      <h2 class="section-title">Featured publication</h2>
-      <article class="featured">
-        <span class="status status-published">Published</span>
-        <h3><a href="https://doi.org/10.1111/1475-5890.70021">Fiscal Drag with Microsimulation: Evidence from Spanish Tax Records</a></h3>
-        <p class="authors">with <a href="https://sites.google.com/view/esteban-garcia-miralles/home">Esteban García-Miralles</a></p>
-        <p class="venue"><em>Fiscal Studies</em>, 47(2): 113–137, 2026</p>
-        <p class="abstract-text">Fiscal drag arises when nominal tax parameters remain unchanged despite nominal income growth, thereby increasing effective tax rates and revenue. We use Spanish administrative tax records and a detailed microsimulation model to examine fiscal drag in personal income taxation. We uncover significant heterogeneity in tax-to-base elasticities across income sources and the income distribution, and our counterfactual simulations show that fiscal drag accounts for about a third of revenue growth from 2019 to 2023.</p>
-        <div class="paper-links">
-          <a class="chip-link" href="https://doi.org/10.1111/1475-5890.70021">Journal article</a>
-          <a class="chip-link" href="https://ieb.ub.edu/publication/2025-08-fiscal-drag-with-microsimulation-evidence-from-spanish-tax-records/">Working paper version</a>
-          <a class="chip-link" href="research.html">All research &rarr;</a>
-        </div>
-      </article>
+        <h3 class="sub-title">Reports and Policy Notes</h3>
+        <ul class="ref-list">
+          <li>
+            <a class="t" href="https://repositorio.bde.es/handle/123456789/37393">Fiscal Drag: The Heterogeneous Impact of Inflation on Personal Income Tax Revenue</a>
+            <span class="m">(with <a href="https://sites.google.com/view/esteban-garcia-miralles/home">Esteban García-Miralles</a>). Banco de España Occasional Papers, No. 2422, 2024.</span>
+            <span class="links"><a class="ext" href="https://repositorio.bde.es/handle/123456789/37393">English</a><a class="ext" href="https://repositorio.bde.es/handle/123456789/36733" hreflang="es">Español</a><a href="#media">Media coverage</a></span>
+          </li>
+          <li>
+            <a class="t" href="https://www.taxobservatory.eu/publication/digital-service-taxes/">Digital Service Taxes</a>
+            <span class="m">(with <a href="https://sites.google.com/site/monambarake/home">Mona Barake</a>, <a href="https://www.eneabaselgia.ch/">Enea Baselgia</a> and <a href="https://stone-center-pse.eu/author/kane-borders/">Kane Borders</a>). EU Tax Observatory Policy Note, June 2023.</span>
+            <span class="links"><a class="ext" href="https://www.taxobservatory.eu/www-site/uploads/2023/06/EUTO_Digital-Service-Taxes_June2023.pdf">PDF</a></span>
+          </li>
+        </ul>
+      </section>
 
-      <!-- ===== At a glance ===== -->
-      <h2 class="section-title">At a glance</h2>
-      <div class="glance">
-        <section class="glance-card">
-          <h3>Education</h3>
-          <ul>
-            <li><strong>PhD in Economics, University of Barcelona</strong><span>2024–present</span></li>
-            <li><strong>MSc in Economics, Lund University</strong><span>Second year, 2021–2022</span></li>
-            <li><strong>MSc in Economics, Universidad Carlos III de Madrid</strong><span>First year, 2020–2021</span></li>
-            <li><strong>Bachelor's in Economics, University of Oviedo</strong><span>2015–2019</span></li>
-          </ul>
-        </section>
-        <section class="glance-card">
-          <h3>Research experience</h3>
-          <ul>
-            <li><strong>Banco de España</strong><span>Research assistant, Public Sector and Fiscal Policy Unit, 2023–2024</span></li>
-            <li><strong>EU Tax Observatory, Paris School of Economics</strong><span>Research assistant, 2022–2023</span></li>
-            <li><strong>Lund University School of Economics and Management</strong><span>Research assistant, 2021–2022</span></li>
-          </ul>
-        </section>
-        <section class="glance-card">
-          <h3>Research visits</h3>
-          <ul>
-            <li><strong>Institute for Fiscal Studies, London</strong><span>Spring 2026</span></li>
-            <li><strong>Paris School of Economics</strong><span>Fall 2025</span></li>
-          </ul>
-        </section>
-        <section class="glance-card">
-          <h3>Training &amp; service</h3>
-          <ul>
-            <li><strong>Advanced Course on Tax Systems (Joel Slemrod)</strong><span>Study Center Gerzensee, 2024</span></li>
-            <li><strong>PhD Course on Tax and Transfer Systems</strong><span>VATT Institute for Economic Research, 2024</span></li>
-            <li><strong>Organizer, Workshop in the Economics of Taxation</strong><span>University of Barcelona &amp; EU Tax Observatory, 2023 and 2025</span></li>
-          </ul>
-        </section>
-      </div>
-      <a class="more-link" href="cv.html">Compact résumé and full CV &rarr;</a>
+      <!-- ===================== CONFERENCES ===================== -->
+      <section id="conferences">
+        <h2 class="section-title">Conferences &amp; Workshops</h2>
 
-      <!-- ===== Contact ===== -->
-      <h2 class="section-title">Contact</h2>
-      <div class="contact">
-        <div>
-          <p class="email"><a href="mailto:sofia.balladares@outlook.es">sofia.balladares@outlook.es</a></p>
-          <p>School of Economics, University of Barcelona &middot; Institut d'Economia de Barcelona (IEB)</p>
-        </div>
-        <div class="actions" style="margin:0">
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/sofia-balladares/">LinkedIn</a>
-          <a class="btn btn-secondary" href="https://bsky.app/profile/sofiaballadares.bsky.social">Bluesky</a>
-        </div>
-      </div>
+        <!--
+          HOW TO ADD A TALK: copy one <li class="event-card"> to the top (newest first).
+          event-kind is the small label (Conference, Workshop, Seminar, Poster, Organizer).
+        -->
+        <h3 class="sub-title">Presentations</h3>
+        <ul class="event-list">
+          <li class="event-card">
+            <div class="event-date"><span class="event-month">Dec</span><span class="event-year">2025</span></div>
+            <div class="event-info">
+              <div class="event-name">50th Symposium of the Spanish Economic Association <span class="event-kind">Conference</span></div>
+            </div>
+          </li>
+          <li class="event-card">
+            <div class="event-date"><span class="event-month">Jun</span><span class="event-year">2025</span></div>
+            <div class="event-info">
+              <div class="event-name">Early Career &amp; PhD Workshop on Socioeconomic Mobility and Public Policies <span class="event-kind">Workshop</span></div>
+            </div>
+          </li>
+          <li class="event-card">
+            <div class="event-date"><span class="event-month">Sep</span><span class="event-year">2024</span></div>
+            <div class="event-info">
+              <div class="event-name">Madrid Public Economics Workshop <span class="event-kind">Workshop</span></div>
+              <div class="event-where">CUNEF Universidad, Madrid</div>
+            </div>
+          </li>
+          <li class="event-card">
+            <div class="event-date"><span class="event-month">Jun</span><span class="event-year">2024</span></div>
+            <div class="event-info">
+              <div class="event-name">NBER Trans-Atlantic Public Economics Seminar <span class="event-kind">Poster</span></div>
+              <div class="event-where">Helsinki</div>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="sub-title">Organization</h3>
+        <ul class="event-list">
+          <li class="event-card">
+            <div class="event-date"><span class="event-month">Jun</span><span class="event-year">2025</span></div>
+            <div class="event-info">
+              <div class="event-name"><a href="https://ieb.ub.edu/event/workshop-on-the-economics-of-taxation-2/">Workshop in the Economics of Taxation, 2nd edition</a> <span class="event-kind">Organizer</span></div>
+              <div class="event-where">University of Barcelona &middot; jointly with the EU Tax Observatory</div>
+            </div>
+          </li>
+          <li class="event-card">
+            <div class="event-date"><span class="event-month">Jun</span><span class="event-year">2023</span></div>
+            <div class="event-info">
+              <div class="event-name"><a href="https://ieb.ub.edu/event/workshop-on-the-economics-of-taxation/">Workshop in the Economics of Taxation</a> <span class="event-kind">Organizer</span></div>
+              <div class="event-where">University of Barcelona &middot; jointly with the EU Tax Observatory</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== MEDIA ===================== -->
+      <section id="media">
+        <h2 class="section-title">In the News</h2>
+        <p class="section-intro">Press coverage of our Banco de España work with Esteban García-Miralles on fiscal drag (<em lang="es">progresividad en frío</em>) in Spain's personal income tax. Articles in Spanish.</p>
+        <!-- HOW TO ADD AN ARTICLE: copy one <li> to the top (newest first). -->
+        <ul class="ref-list">
+          <li lang="es"><a class="t ext" href="https://www.lavanguardia.com/economia/20240617/9736521/hacienda-ingresa-11-000-millones-extra-ajustar-irpf-inflacion.html">Hacienda ingresa 11.000 millones extra por no ajustar el IRPF a la inflación</a> <span class="m">— <em>La Vanguardia</em>, June 2024</span></li>
+          <li lang="es"><a class="t ext" href="https://www.expansion.com/economia/2024/06/15/666c8b85468aeb66138b45a0.html">El Banco de España calcula que la inflación causa el 50% del alza de recaudación del IRPF</a> <span class="m">— <em>Expansión</em>, June 2024</span></li>
+          <li lang="es"><a class="t ext" href="https://www.eleconomista.es/economia/noticias/12866007/06/24/la-mitad-del-alza-de-la-recaudacion-por-irpf-se-debe-a-no-deflactar-sus-tipos-segun-el-banco-de-espana.html">La mitad del alza de la recaudación por IRPF se debe a no deflactar sus tipos, según el Banco de España</a> <span class="m">— <em>El Economista</em>, June 2024</span></li>
+          <li lang="es"><a class="t ext" href="https://www.elconfidencial.com/economia/2024-04-30/progresividad-frio-mitad-aumento-recaudacion-irpf_3875759/">La progresividad en frío es responsable de la mitad del aumento de la recaudación del IRPF</a> <span class="m">— <em>El Confidencial</em>, April 2024</span></li>
+          <li lang="es"><a class="t ext" href="https://www.20minutos.es/lainformacion/economia-y-finanzas/-banco-espana-calcula-que-deflactar-irpf-habria-ahorrado-11-000-millones-los-contribuyentes-5265533/">El Banco de España calcula que deflactar el IRPF habría ahorrado 11.000 millones a los contribuyentes</a> <span class="m">— <em>20 Minutos</em>, April 2024</span></li>
+        </ul>
+      </section>
 
     </div>
   </main>
 
-  <!-- ===== Footer (identical on every page) ===== -->
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Sofía Balladares</p>
-      <p><a href="mailto:sofia.balladares@outlook.es">sofia.balladares@outlook.es</a> &middot; Last updated November 2026</p>
-    </div>
+    <p><a href="mailto:sofia.balladares@outlook.es">sofia.balladares@outlook.es</a> &middot; University of Barcelona &amp; IEB</p>
+    <p>
+      <a href="https://www.linkedin.com/in/sofia-balladares/">LinkedIn</a> &middot;
+      <a href="https://bsky.app/profile/sofiaballadares.bsky.social">Bluesky</a> &middot;
+      <a href="https://ieb.ub.edu/researcher/sofia-balladares/">IEB profile</a> &middot;
+      <a href="assets/pdf/CV_Sofia_Balladares.pdf" target="_blank" rel="noopener">CV</a>
+    </p>
+    <p>&copy; 2026 Sofía Balladares &middot; Last updated November 2026</p>
   </footer>
+
+  <!-- Highlights the nav item of the section in view (the page works without it). -->
+  <script>
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    function activate(id) {
+      links.forEach(function (a) { a.classList.toggle('active', a === byId[id]); });
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) activate(e.target.id); });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    Object.keys(byId).forEach(function (id) {
+      var s = document.getElementById(id);
+      if (s) observer.observe(s);
+    });
+    window.addEventListener('scroll', function () {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) activate('media');
+    }, { passive: true });
+  })();
+  </script>
 </body>
 </html>

@@ -29,13 +29,18 @@ market at the end of the PhD. The goals are:
 
 1. **Findable**: shows up when someone searches her name; links to and from
    her profiles (UB, IEB, LinkedIn, Bluesky, later Google Scholar, ORCID, RePEc).
-2. **Credible at a glance**: a clean, restrained, document-like design in the
-   style of economics job-market sites. The reference site she liked is
-   Sebastian Ritter's (https://sebastianritterg.github.io/), a fellow UB PhD.
-   We copied its *structure*, not its look, so the two sites don't read as
-   copies.
+2. **Credible at a glance**: a classic academic look. The current design is
+   modelled on **Javier Feinmann's** site
+   (https://javierfeinmann.github.io/JavierFeinmann/), which Sofía chose
+   because it looks more academic. That means one page, a navy navbar, a round
+   photo next to a short bio, centred section titles between thick rules,
+   collapsible paper titles, and talk cards with date badges. The design
+   reuses his *layout*, with our own fonts, navy shade and CSS, so it doesn't
+   read as a copy. He is in her professional circle (PSE / EU Tax Observatory).
+   An earlier multi-page version modelled on Sebastian Ritter's site
+   (https://sebastianritterg.github.io/) was replaced the same day.
 3. **Easy to maintain**: plain HTML + one CSS file, no build step, no
-   framework. Any page can be edited in a text editor or on github.com.
+   framework. The page can be edited in a text editor or on github.com.
 
 - **Live site**: https://sofiaballadares.github.io (GitHub Pages, user site)
 - **Repository**: github.com/sofiaballadares/sofiaballadares.github.io (local folder:
@@ -44,55 +49,61 @@ market at the end of the PhD. The goals are:
 
 ### Site map
 
-| Page | File | Contents |
-|------|------|----------|
-| Home | `index.html` | Intro + photo, profile links, *Recent updates*, *Featured publication*, *At a glance* grid, contact |
-| Research | `research.html` | Publications, work in progress, book chapters, reports & policy notes; each item is a card with status label, expandable abstract, topic tags, link chips |
-| CV | `cv.html` | Compact HTML résumé, references, download button, embedded PDF |
-| Conferences | `conferences.html` | Presentations and organised workshops (dated lists) |
-| In the News | `news.html` | Press coverage (Spanish-language articles) |
-| 404 | `404.html` | Shown by GitHub Pages for missing URLs (uses absolute `/` paths on purpose) |
+Everything is on **one page**, `index.html`. The navbar links jump to each
+section, and a small inline script underlines the section currently in view.
+
+| Section (anchor) | Contents |
+|------------------|----------|
+| Home (`#home`) | Round photo, two-paragraph bio, and an info list with icons: email, affiliation, CV (PDF) · LinkedIn · Bluesky |
+| Research (`#research`) | *Publications*: collapsible `<details>` rows. The title and a meta line show by default; opening a row shows topic pills, links and the abstract. *Work in Progress*, *Book Chapters* and *Reports and Policy Notes* are plain lists. |
+| Conferences & Workshops (`#conferences`) | *Presentations* and *Organization*, shown as event cards with a navy month/year badge and a kind label |
+| In the News (`#media`) | Press coverage (Spanish-language articles) |
+| CV (navbar) | Opens the PDF directly. There is no HTML CV page. |
+
+`404.html` is shown by GitHub Pages for missing URLs. It uses absolute `/`
+paths on purpose, so it looks unstyled when opened locally.
 
 ---
 
 ## Key Files
 
-- **Stylesheet (all pages)**: `assets/css/style.css`. Colours and fonts are
-  CSS variables in `:root` at the top.
-- **CV PDF**: `assets/pdf/CV_Sofia_Balladares.pdf`. Linked from home and the CV
-  page, and embedded in `cv.html`.
+- **The page**: `index.html`. Each section has a `HOW TO ADD ...` comment with
+  the block to copy.
+- **Stylesheet**: `assets/css/style.css`. Colours and fonts are CSS variables
+  in `:root` at the top.
+- **CV PDF**: `assets/pdf/CV_Sofia_Balladares.pdf`. Linked from the navbar, the
+  intro info list and the footer.
 - **Photo**: `assets/img/personal_photo.jpg` (800×800). Also used for link
   previews (`og:image`).
 - **Favicon**: `assets/img/favicon.svg` ("SB" monogram).
 - **Jekyll config**: `_config.yml`. It only excludes this file from the
   published site. Pages have no front matter, so Jekyll copies them unchanged.
-- Fonts: Google Fonts *Source Serif 4* (headings) and *Inter* (body). There
-  are no other external dependencies.
+- Fonts (Google Fonts): *Cormorant Garamond* for the name in the navbar,
+  *Source Serif 4* for section titles, *Source Sans 3* for body text. There are
+  no other external dependencies: no Bootstrap, and no JavaScript beyond the
+  small inline nav-highlight script.
 
 ---
 
 ## How to make common updates (recipes)
 
-All pages share an **identical header and footer**. When changing the nav,
-footer, email or "Last updated" date, edit **all five pages** (plus nav links
-in `404.html`). Only the `aria-current="page"` attribute differs per page.
+If the navbar changes, also update the nav links in `404.html`.
 
 | Task | What to do |
 |------|------------|
-| Replace the CV | Overwrite `assets/pdf/CV_Sofia_Balladares.pdf`, keeping the same name. If the content changed, sync `cv.html` (the HTML résumé is written by hand). |
-| Add a paper | Copy an `<article class="paper">` block in `research.html`. Status classes: `status-published`, `status-wip`, `status-report`. A template comment at the top of the file shows how to add a figure (`has-figure`). Also update the CV list in `cv.html` and, if relevant, *Featured publication* / *Recent updates* on `index.html`. |
-| Add a talk | Add an `<li>` at the top of the list in `conferences.html` (newest first). Add it to *Recent updates* on home if it's recent. |
-| Add a press article | Add an `<li>` at the top of `news.html`. |
-| Recent updates (home) | Keep 4–6 items, newest first. Remove the oldest when adding. |
-| Add Google Scholar / ORCID / RePEc | Uncomment the placeholders in the `profile-links` list in `index.html` and add the URL to the JSON-LD `sameAs` list in the `<head>`. |
-| Change email | Search and replace `sofia.balladares@outlook.es` across all `.html` files (header JSON-LD, home contact, every footer). |
+| Replace the CV | Overwrite `assets/pdf/CV_Sofia_Balladares.pdf`, keeping the same name. |
+| Add a paper | Copy a `<details class="paper">` block into the right subsection of `#research`. Put the title and one meta line (coauthors · venue) in `<summary>`; put pills, links and abstract in `.paper-body`. For a new subsection (e.g. "Working Papers", or a "Job Market Paper" at the top), add an `<h3 class="sub-title">` and a `<div class="papers">`. |
+| Add work in progress | Add an `<li>` to the *Work in Progress* `ref-list`: `<span class="t">Title</span> <span class="m">(with …)</span>`. |
+| Add a talk | Copy an `<li class="event-card">` to the top of *Presentations* (newest first). Set the month and year in the badge and the kind label (`Conference`, `Workshop`, `Seminar`, `Poster`). |
+| Add a press article | Add an `<li>` at the top of the `#media` list. |
+| Add Google Scholar / ORCID / RePEc | Uncomment the placeholders in the intro `info` list. Also add them to the footer links and to the JSON-LD `sameAs` list in the `<head>`. |
+| Change email | Search and replace `sofia.balladares@outlook.es` in `index.html` (JSON-LD, intro info list, footer). |
 | Change site URL / custom domain | Search and replace `https://sofiaballadares.github.io` (canonical, `og:` tags, JSON-LD). For a custom domain also add a `CNAME` file and set it under repo Settings → Pages. |
 | Publish | `git add -A && git commit -m "..." && git push`. GitHub Pages rebuilds in about 1–2 minutes. Browsers may cache the CV for up to about 10 minutes. |
 
 ### Previewing locally
-Double-click `index.html`. All links are relative (`research.html`, not
-`/research/`), so the site works from the file system. GitHub Pages also
-serves extensionless URLs (`/research` → `research.html`).
+Double-click `index.html`. All its links are relative or `#anchors`, so it
+works from the file system.
 
 ### Visual check (do this after any layout change)
 Render with headless Edge and look at the PNGs (desktop 1280px, phone 375px).
@@ -131,11 +142,11 @@ If something is missing, leave a commented placeholder and ask Sofía.
 | Date | Decision | Rationale |
 |------|----------|-----------|
 | 2026-11-06 | Plain HTML/CSS instead of a Jekyll theme (academicpages, al-folio) | No build step, nothing to break, works offline, easy to edit by hand or with Claude. Can migrate later if the content outgrows it. |
-| 2026-11-06 | Five pages modelled on Sebastian Ritter's site (Home / Research / CV / Conferences / In the News), with our own colours and fonts | Standard job-market structure. A distinct look avoids reading as a copy of a departmental colleague's site. "In the News" replaces his "Blog". |
-| 2026-11-06 | Flat files (`research.html`) rather than folders (`research/index.html`) | Links work both on GitHub Pages and when opening files locally. |
+| 2026-11-06 | **Redesign: single page modelled on Javier Feinmann's site**, replacing the five-page Sebastian Ritter-style version | Sofía found parts of the first version less academic, especially the "At a glance" cards. We dropped *At a glance*, *Recent updates*, the featured-paper card, button-style contact links and the HTML CV page. The old `research.html`, `cv.html`, `conferences.html` and `news.html` were deleted; they had been live for under an hour. |
+| 2026-11-06 | Same layout as Feinmann, but our own fonts (Cormorant Garamond / Source Serif 4 / Source Sans 3), navy `#0f1f3d` and hand-written CSS (no Bootstrap) | Close enough to read as the same academic style, distinct enough not to look copied. |
+| 2026-11-06 | Papers as `<details>` rows, collapsed by default, with coauthors and venue visible in the row | His accordion look, without JavaScript. Visitors see coauthors and journal without clicking. |
 | 2026-11-06 | Fiscal drag paper shown as **published** (*Fiscal Studies* 2026), not as a working paper | The CV PDF is outdated on this point; Crossref confirms publication. |
 | 2026-11-06 | Email shown: `sofia.balladares@outlook.es` | It is the address on the current CV and survives after the PhD. The old site used the UB address. |
-| 2026-11-06 | References listed with emails on `cv.html` | Already public in the CV PDF; standard on job-market sites. Easy to remove. |
 | 2026-11-06 | American spelling throughout ("organized") | Matches the CV. |
 | 2026-11-06 | Address `sofiaballadares.github.io`: GitHub account renamed from `Sofia-BH` to `sofiaballadares` | Name-based URL matches her Bluesky handle. Decided before the URL goes on the CV, because GitHub does not redirect a renamed user's `*.github.io` site. Her other repos' remotes (`github.com/Sofia-BH/...`) keep working through GitHub's redirects but should eventually be updated. |
 
@@ -143,7 +154,10 @@ If something is missing, leave a commented placeholder and ask Sofía.
 
 - **Keeping Google Sites**: limited layout control, looks less professional, poor
   SEO and link previews.
-- **Copying Sebastian's theme/CSS one-to-one**: it would look like a copy.
+- **Copying Sebastian's or Javier's theme/CSS one-to-one**: it would look like a copy.
+- **Multi-page "job-market dashboard" style** (first version: At a glance grid,
+  Recent updates box, featured-paper card, HTML CV page): Sofía found it less
+  academic. Don't reintroduce card grids or dashboard-like summaries.
 
 ---
 
@@ -151,8 +165,8 @@ If something is missing, leave a commented placeholder and ask Sofía.
 
 **Phase**: Live at https://sofiaballadares.github.io (published 2026-11-06).
 
-- Five pages, stylesheet, favicon and 404 page are written and visually checked
-  at 1280px and 375px.
+- Single-page design (Feinmann style) built, visually checked at 1280px and
+  375px, and pushed (2026-11-06).
 - GitHub account renamed `Sofia-BH` → `sofiaballadares`. Public repo
   `sofiaballadares/sofiaballadares.github.io` created and pushed. Pages builds
   from `main` / root with HTTPS enforced. All pages, the CV PDF and the photo
@@ -182,12 +196,13 @@ If something is missing, leave a commented placeholder and ask Sofía.
    Bluesky so they point to the new site.
 4. **Retire the Google Site**: replace its content with a one-line link to the
    new site (keeps old links working) or unpublish it.
-5. Optional: personal "a little about me" line (placeholder on home); figures
-   for research cards; custom domain (e.g. sofiaballadares.com, ~€10–15/year);
+5. Optional: personal "a little about me" line (placeholder in the bio); an
+   office address in the intro info list (as Feinmann has); a figure inside an
+   opened paper row; custom domain (e.g. sofiaballadares.com, ~€10–15/year);
    abstracts for work-in-progress papers once she wants them public.
-6. Job market (later): add a "Job Market Paper" section at the top of
-   `research.html`, a JMP button in the home hero, and an eyebrow line such as
-   "On the economics job market 20XX–XX".
+6. Job market (later): add a "Job Market Paper" subsection at the top of
+   `#research`, opened by default (`<details open>`). Mention it in the bio's
+   first line ("I am on the 20XX–XX job market").
 
 ---
 
@@ -198,9 +213,9 @@ If something is missing, leave a commented placeholder and ask Sofía.
   publisher, not just the CV, which can lag behind.
 - **Never fabricate** abstracts, figures, coauthors or affiliations. Use a
   commented placeholder and ask.
-- Keep the header and footer identical on every page. After any visual change,
-  run the screenshot check above at desktop and phone widths.
-- Use relative links everywhere except in `404.html`.
+- After any visual change, run the screenshot check above at desktop and
+  phone widths.
+- Use relative links and `#anchors` everywhere except in `404.html`.
 - Work-in-progress titles are public. Don't add a new project without Sofía's
   explicit OK: some projects use restricted administrative data, and
   coauthors may not want them announced.
