@@ -190,7 +190,10 @@ If something is missing, leave a commented placeholder and ask Sofía.
 0. **Google ranking for "Sofía Balladares"** (Sofía's to-do, in order):
    1. Google Search Console: add the URL-prefix property and verify it (recipe
       above). Then submit `sitemap.xml`, and use URL Inspection → *Request
-      indexing* on the home page.
+      indexing* on the home page. **Status 2026-11-06**: both verification
+      methods are live: the meta tag in `index.html` `<head>` and the file
+      `googleadc9fc88aed60815.html`. Keep both. Waiting for Sofía to click
+      Verify and submit the sitemap.
    2. Add a link to the site from every profile, most important first: UB PhD
       page and IEB researcher page (ask the webmasters), LinkedIn (Contact info
       → Website), Bluesky bio, GitHub profile (Settings → Public profile →
